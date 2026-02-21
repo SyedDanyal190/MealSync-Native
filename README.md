@@ -51,4 +51,4 @@ MealSync is a React Native app that demonstrates:
 
 
 
-## File Structure
+

@@ -4,7 +4,7 @@ import { MealContext } from "../context/MealContext";
 import childrenData from "../mock-data/children.json";
 import { getSuggestedMeals } from "../utils/mealSuggestions";
 import MealCard from "../components/MealCard";
-
+import ChildSelector from "../components/ChildSelector";
 
 const MealMenuScreen = () => {
   const { meals } = useContext(MealContext);
@@ -18,7 +18,11 @@ const MealMenuScreen = () => {
 
   return (
     <View style={styles.container}>
-    
+      <ChildSelector
+        childrenList={childrenData}
+        selectedChild={selectedChild}
+        onSelect={setSelectedChild}
+      />
 
       <Text style={styles.heading}>
         Suggested For You ({suggestedMeals.length})

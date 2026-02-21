@@ -1,5 +1,5 @@
 import React, { createContext, useReducer } from "react";
-import mealsData from "../mock-data/meal.json";
+import mealsData from "../mock-data/meals.json";
 
 export const MealContext = createContext();
 

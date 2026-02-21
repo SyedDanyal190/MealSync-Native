@@ -13,7 +13,9 @@ const ChildSelector = ({ childrenList, selectedChild, onSelect }) => {
             style={[styles.button, isSelected && styles.selected]}
             onPress={() => onSelect(child)}
           >
-            <Text style={styles.text}>{child.name}</Text>
+            <Text style={[styles.text, isSelected && styles.selectedText]}>
+              {child.name}
+            </Text>
           </TouchableOpacity>
         );
       })}
@@ -25,21 +27,28 @@ export default ChildSelector;
 
 const styles = StyleSheet.create({
   container: {
-       borderWidth: 2,         
-    borderColor: "red",      
     flexDirection: "row",
     justifyContent: "space-around",
-    marginBottom: 10,
+    marginBottom: 12,
+    paddingHorizontal: 8,
   },
   button: {
-    padding: 8,
-    backgroundColor: "#ddd",
-    borderRadius: 6,
+    paddingVertical: 10,
+    paddingHorizontal: 16,
+    backgroundColor: "#e0e0e0",
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: "#ccc",
   },
   selected: {
     backgroundColor: "#4caf50",
+    borderColor: "#388e3c",
   },
   text: {
     fontWeight: "bold",
+    color: "#333",
+  },
+  selectedText: {
+    color: "#fff",
   },
 });

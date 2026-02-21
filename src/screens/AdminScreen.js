@@ -44,13 +44,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    backgroundColor: "#f0f0f0", // light background for admin
+    backgroundColor: "#f0f0f0", 
   },
   heading: {
     fontSize: 22,
     fontWeight: "bold",
-    textAlign: "center", // center text
-    backgroundColor: "#4caf50", // dashboard background color
+    textAlign: "center", 
+    backgroundColor: "#4caf50", 
     color: "#fff",
     paddingVertical: 12,
     borderRadius: 8,

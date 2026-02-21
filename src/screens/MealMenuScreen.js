@@ -28,13 +28,13 @@ const MealMenuScreen = () => {
         Suggested For You ({suggestedMeals.length})
       </Text>
 
-      {suggestedMeals.length === 0 ? (
-        <Text>No safe meals available</Text>
-      ) : (
-        suggestedMeals.map(meal => (
-          <MealCard key={meal.id} meal={meal} />
-        ))
-      )}
+  {suggestedMeals.length === 0 ? (
+  <Text>No safe meals available</Text>
+) : (
+  suggestedMeals.map(meal => (
+    <MealCard key={meal.id} meal={meal} small />  
+  ))
+)}
 
       <Text style={styles.heading}>
         All Meals ({activeMeals.length})
@@ -51,11 +51,21 @@ const MealMenuScreen = () => {
 
 export default MealMenuScreen;
 
+
+
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 16 },
+  container: { 
+    flex: 1, 
+    padding: 16, 
+    backgroundColor: "#f9f9f9" 
+  },
   heading: {
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: "bold",
-    marginVertical: 10,
+    marginVertical: 12,
+    textAlign: "center",
+    color: "#333",
   },
 });
+
+

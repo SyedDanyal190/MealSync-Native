@@ -1,13 +1,16 @@
+// MealCard.js
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
-const MealCard = ({ meal }) => {
+const MealCard = ({ meal, small }) => {
   return (
-    <View style={styles.card}>
-      <Text style={styles.name}>{meal.name}</Text>
-      <Text style={styles.price}>${meal.price.toFixed(2)} CAD</Text>
-      <Text style={styles.tag}>Cuisine: {meal.cuisineTag}</Text>
-      <Text style={styles.tag}>
+    <View style={[styles.card, small && styles.cardSmall]}>
+      <Text style={[styles.name, small && styles.nameSmall]}>{meal.name}</Text>
+      <Text style={[styles.price, small && styles.priceSmall]}>
+        ${meal.price.toFixed(2)} CAD
+      </Text>
+      <Text style={[styles.tag, small && styles.tagSmall]}>Cuisine: {meal.cuisineTag}</Text>
+      <Text style={[styles.tag, small && styles.tagSmall]}>
         Allergens: {meal.allergens.length ? meal.allergens.join(", ") : "None"}
       </Text>
     </View>
@@ -18,21 +21,47 @@ export default MealCard;
 
 const styles = StyleSheet.create({
   card: {
-           borderWidth: 2,          // instead of "1px"
-    borderColor: "red",      // instead of "solid red"
-    backgroundColor: "#f2f2f2",
-    padding: 12,
+    backgroundColor: "#fff",
+    borderWidth: 1,
+    borderColor: "#ccc",
+    borderRadius: 12,
+    padding: 16,
+    marginVertical: 8,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
+  },
+  cardSmall: {
+    padding: 8,
+    marginVertical: 4,
     borderRadius: 8,
-    marginVertical: 6,
   },
   name: {
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: "bold",
+    marginBottom: 6,
+  },
+  nameSmall: {
+    fontSize: 14,
+    marginBottom: 2,
   },
   price: {
-    marginTop: 4,
+    fontSize: 16,
+    marginBottom: 4,
+  },
+  priceSmall: {
+    fontSize: 12,
+    marginBottom: 2,
   },
   tag: {
-    fontSize: 13,
+    fontSize: 14,
+    color: "#555",
+    marginBottom: 2,
+  },
+  tagSmall: {
+    fontSize: 12,
+    marginBottom: 1,
   },
 });
